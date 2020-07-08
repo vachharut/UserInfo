@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">UserInfo</string>
+    <string name="label_user_info">User Info</string>
+    <string name="label_album_id">Album ID: %1$d</string>
+    <string name="label_album">Album</string>
+    <string name="label_photo">Photo</string>
+    <string name="label_photo_id">Photo ID: %1$d</string>
+    <string name="user_id">ID: %1$s</string>
+    <string name="user_name">Name: %1$s</string>
+    <string name="user_email">Email: %1$s</string>
+    <string name="user_phone">Phone: %1$s</string>
+</resources>

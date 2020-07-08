@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="args"
+            type="info.user.photo.PhotoFragmentArgs" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvAlbumId"
+            style="@style/TextTitle"
+            android:gravity="center"
+            android:text="@{@string/label_album_id(args.albumId)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Album ID: 1" />
+
+        <TextView
+            android:id="@+id/tvPhotoId"
+            style="@style/TextTitle"
+            android:gravity="center"
+            android:text="@{@string/label_photo_id(args.photoId)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAlbumId"
+            tools:text="Photo ID: 1" />
+
+        <ScrollView
+            android:id="@+id/svPhoto"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="@dimen/match_constraint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPhotoId">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/space_large">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    app:imageUrl="@{args.photoUrl}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_baseline_blur" />
+
+                <TextView
+                    android:id="@+id/tvImageText"
+                    style="@style/TextDescription"
+                    android:layout_marginStart="@dimen/space_mid"
+                    android:layout_marginTop="@dimen/space_large"
+                    android:background="@color/blue"
+                    android:padding="@dimen/space_large"
+                    android:text="@{args.imageText}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivPhoto"
+                    tools:text="culpa odio esse rerum omnis laboriosam voluptate repudiandae" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

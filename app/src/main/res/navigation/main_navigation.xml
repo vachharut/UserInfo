@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@+id/users">
+
+    <fragment
+        android:id="@+id/users"
+        android:name="info.user.users.UsersFragment"
+        android:label="@string/label_user_info"
+        tools:layout="@layout/fragment_users">
+        <action
+            android:id="@+id/action_users_to_album"
+            app:destination="@id/album" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/album"
+        android:name="info.user.album.AlbumFragment"
+        android:label="@string/label_album"
+        tools:layout="@layout/fragment_album">
+        <argument
+            android:name="albumId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_album_to_photo"
+            app:destination="@id/photo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/photo"
+        android:name="info.user.photo.PhotoFragment"
+        android:label="@string/label_photo"
+        tools:layout="@layout/fragment_photo">
+        <argument
+            android:name="albumId"
+            app:argType="integer" />
+        <argument
+            android:name="photoId"
+            app:argType="integer" />
+        <argument
+            android:name="photoUrl"
+            app:argType="string" />
+        <argument
+            android:name="imageText"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

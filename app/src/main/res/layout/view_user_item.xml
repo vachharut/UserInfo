@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="info.user.users.UserModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardCornerRadius="@dimen/space_zero"
+        app:cardElevation="@dimen/elevation_small"
+        app:cardMaxElevation="@dimen/elevation_mid"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <TextView
+                android:id="@+id/tvUserId"
+                style="@style/TextDescription"
+                android:gravity="center"
+                android:text="@{@string/user_id(model.id)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="ID: 1" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                style="@style/TextDescription"
+                android:text="@{@string/user_name(model.name)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUserId"
+                tools:text="Name: Jack" />
+
+            <TextView
+                android:id="@+id/tvUserEmail"
+                style="@style/TextDescription"
+                android:text="@{@string/user_email(model.email)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUserName"
+                tools:text="Email: jack@jill.com" />
+
+            <TextView
+                android:id="@+id/tvUserPhone"
+                style="@style/TextDescription"
+                android:text="@{@string/user_phone(model.phone)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUserEmail"
+                tools:text="Phone: 0456443234" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
